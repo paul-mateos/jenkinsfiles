@@ -7,7 +7,7 @@ node('VB_JenkinsSlave_DockerEngine'){
     db = docker.build('docker_hello-world', '.')
     
     stage("Push to Registry")
-    docker.withRegistry('https://192.168.139.2:5000') {
+    docker.withRegistry('http://192.168.139.2:5000') {
           db.push()
       }
     
